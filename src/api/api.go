@@ -7,7 +7,7 @@ import (
 )
 
 func response(rw http.ResponseWriter, r *http.Request) {
-	question := "1,2"
+	question := "1,2,3"
 	sum := calculator.Add(question)
 	sumText := strconv.Itoa(sum)
 	rw.Write([]byte(question + " = " + sumText))
