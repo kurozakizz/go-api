@@ -5,3 +5,6 @@ pipeline:
       - go test calculator
       - go build api
       - api
+
++branches:
++  include: [ master ]
