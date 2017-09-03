@@ -1,6 +1,7 @@
-build:
-  image: golang
-  commands:
-    - go test calculator
-    - go build api
-    - api
+pipeline:
+  build:
+    image: golang
+    commands:
+      - go test calculator
+      - go build api
+      - api
