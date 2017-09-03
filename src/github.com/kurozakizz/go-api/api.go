@@ -1,17 +1,19 @@
 package main
 
-import(
+import (
+	"calculator"
 	"net/http"
-	"fmt"
+	"strconv"
 )
 
 func response(rw http.ResponseWriter, r *http.Request) {
-	fmt.Println(r.Method)
-	rw.Write([]byte("Hello World"))
+	question := "1,2"
+	sum := calculator.Add(question)
+	sumText := strconv.Itoa(sum)
+	rw.Write([]byte(question + " = " + sumText))
 }
 
 func fail(rw http.ResponseWriter, r *http.Request) {
-	fmt.Println(r.Method)
 	rw.Write([]byte("Fail na"))
 }
 
